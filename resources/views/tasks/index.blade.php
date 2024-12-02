@@ -1,3 +1,5 @@
-<div>
-    <!-- Order your soul. Reduce your wants. - Augustine -->
-</div>
+@extends('layouts.app')
+
+@section('content')
+task1
+@endsection
