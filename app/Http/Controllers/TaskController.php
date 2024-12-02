@@ -8,6 +8,10 @@ use App\Http\Requests\UpdateTaskRequest;
 
 class TaskController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');//this is the ailies for the auth which is kernal.php and you can see the built-in middlewaers
+    }
     /**
      * Display a listing of the resource.
      */
