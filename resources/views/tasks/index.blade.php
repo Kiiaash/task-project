@@ -25,22 +25,9 @@
         </div>
     </div>
     <hr class="w-75 bg-secondery m-5 mx-auto">
-    @if($cards->all())
+    @if ($cards->all())
         @foreach ($cards as $card)
-            <div class="card text-center col-md-3 m-5 float-start">
-                <div class="card-header">Task #{{ $card->id }}</div>
-                <div class="card-body">
-                    <p class="card-text">{{ $card->task }}</p>
-                    <form action="{{ route('tasks.destroy', $card->id) }}" method="POST">
-                        @csrf
-                        @method('delete')
-                        <input type="submit" name="delete" value="X" class="btn btn-danger">
-                    </form>
-                </div>
-                <div class="card-footer text-body-secondary">
-                    {{ $card->created_at->diffForHumans() }}
-                </div>
-            </div>
+            <x-card :card="$card" name="task_card" id="TCard"></x-card>
         @endforeach
     @else
         <div class="alert alert-primary d-flex align-items-center mx-5" role="alert">
