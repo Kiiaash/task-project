@@ -31,10 +31,10 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('home') }}">Home</a>
+                            <a class="nav-link {{ request()->is('home') ? 'active':' ' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                           </li>
                           <li class="nav-item">
-                            <a class="nav-link" href="{{ route('tasks.index') }}">Tasks</a>
+                            <a class="nav-link {{ request()->is('tasks') ? 'active':' ' }} " href="{{ route('tasks.index') }}">Tasks</a>
                           </li>
                     </ul>
 
