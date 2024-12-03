@@ -14,7 +14,8 @@ class Task extends Model
 
     protected function task() : Attribute{
         return Attribute::make(
-            get:fn(string $value) => Str::title($value)
+            //get:fn(string $value) => Str::title($value),
+            set:fn(string $value) => Str::lower($value)
         );
     }
 
