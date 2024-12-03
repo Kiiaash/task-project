@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreTaskRequest extends FormRequest
 {
@@ -11,7 +12,11 @@ class StoreTaskRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        if(Auth::check()){
+            return true;
+        }else{
+            return false;
+        }
     }
 
     /**
@@ -22,7 +27,7 @@ class StoreTaskRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'task_main'=>'required|min:5',
         ];
     }
 }
