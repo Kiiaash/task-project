@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
@@ -33,7 +34,15 @@ class TaskController extends Controller
      */
     public function store(StoreTaskRequest $request)
     {
-        dd($request->input());
+        // dd($request->user()->id);
+        // dd($auth = Auth::id());
+        $task = new Task();
+        $task -> task = $request->input('task_main');
+        $task -> user_id = $request->user()->id;
+        $task -> created_at = now();
+        $task -> updated_at = null;
+        $task -> save();
+        return redirect()->route('tasks.index');
     }
 
     /**
