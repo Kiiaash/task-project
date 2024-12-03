@@ -5,7 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Task;
 use App\Http\Requests\StoreTaskRequest;
 use App\Http\Requests\UpdateTaskRequest;
+use App\Http\Requests\UserTasksRequest;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class TaskController extends Controller
 {
@@ -16,10 +19,9 @@ class TaskController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $task = new Task();
-        $cards = $task->all();
+    public function index(Request $request)
+    {      
+        $cards = User::find($request->user()->id)->tasks ;
         return view('tasks.index',compact('cards'));
     }
 
