@@ -18,7 +18,9 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('tasks.index');
+        $task = new Task();
+        $cards = $task->all();
+        return view('tasks.index',compact('cards'));
     }
 
     /**
@@ -74,6 +76,7 @@ class TaskController extends Controller
      */
     public function destroy(Task $task)
     {
-        //
+        Task::find($task->id)->delete();
+        return redirect()->route('tasks.index');
     }
 }
