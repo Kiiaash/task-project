@@ -2,14 +2,14 @@
 
 
 @section('title')
-Tasks
+Edit
 @endsection
 
 @section('pagetitel')
-Tasks
+Edit
 @endsection
 
 @section('content')
-    Posts
+    Editor
 @endsection
 

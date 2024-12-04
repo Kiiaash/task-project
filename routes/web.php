@@ -22,13 +22,17 @@ Route::get('/dashboard',function(){
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
 
-    Route::get('/admin',function(){
+    Route::get('/dashboard',function(){
         return view('admin.sections.index');
     })->name('dashboard');
 
-    Route::get('/posts',function(){
+    Route::get('/tasks',function(){
         return view('admin.sections.posts.index');
-    });
+    })->name('tasks');
+
+    Route::get('/edit',function(){
+        return view('admin.sections.editor.index.blade');
+    })->name('edit');
     
 
 });
