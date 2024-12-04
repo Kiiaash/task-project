@@ -16,3 +16,8 @@ Route::resource('tasks',TaskController::class);
 Route::get('/dashboard',function(){
     return view('home');
 })->name('dashboard')->middleware('auth');
+
+
+Route::get('/admin',function(){
+    return view('admin.sections.index');
+});
