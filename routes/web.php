@@ -18,6 +18,17 @@ Route::get('/dashboard',function(){
 })->name('dashboard')->middleware('auth');
 
 
-Route::get('/admin',function(){
-    return view('admin.sections.index');
+
+
+Route::middleware(['auth'])->prefix('admin')->group(function(){
+
+    Route::get('/admin',function(){
+        return view('admin.sections.index');
+    })->name('dashboard');
+
+    Route::get('/posts',function(){
+        return view('admin.sections.posts.index');
+    });
+    
+
 });
