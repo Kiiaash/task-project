@@ -1,6 +1,7 @@
 /* @tailwind base;
 @tailwind components;
 @tailwind utilities; */
+
 body {
     margin: 0;
 }
@@ -104,4 +105,12 @@ footer{
 footer a{
     text-decoration: none;
     color: #989898;
+}
+.loginbody{
+    background: repeating-linear-gradient(45deg,
+    #9715a1,
+    #e80ef3,
+    #d2257e,
+    #d749d7
+    );
 }

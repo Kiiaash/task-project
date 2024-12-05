@@ -44,7 +44,7 @@
         <footer>
             <p>&copy;2024 testProject. All rights reserved.</p>
             <p>
-                <a href="{{ route('managment') }}">Login</a>
+                <a href="{{ route('login.take') }}">Login</a>
             </p>
         </footer>
     </body>
