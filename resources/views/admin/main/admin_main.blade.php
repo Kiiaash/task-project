@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
 
-    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/css/app.css'])
+    @vite(['resources/sass/app.scss', 'resources/js/app.js','resources/css/dashboard.css'])
 </head>
 
 <body class="sb-nav-fixed">
@@ -35,11 +35,11 @@
             <li class="nav-item dropdown headbutton">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownn" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="dropdown-menu dropdown-menu-end hidee" style="position: absolute; right:5px;" id="dropdown" aria-labelledby="navbarDropdown">
+                <ul class="hiddenmenu" id="dropdown" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Settings</a></li>
                     <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                     <li>
-                        <hr class="dropdown-divider" />
+                        <hr class="dividerline" />
                     </li>
                     <li><a class="dropdown-item" href="{{ route('logout.dashboard') }}">Logout</a></li>
                 </ul>
@@ -65,7 +65,7 @@
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
-                            <nav class="sb-sidenav-menu-nested nav">
+                            <nav class="sb-sidenav-menu-nested nav" style="animation:none;">
                                 <a class="nav-link" href="{{ route('tasks') }}">Tasks</a>
                                 <a class="nav-link" href="{{ route('edit') }}">Editor</a>
                             </nav>

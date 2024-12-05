@@ -2,32 +2,10 @@
 @tailwind components;
 @tailwind utilities; */
 
-@keyframes showup {
-    0%{
-        max-height: 0;
-        opacity: 0;
-    }
-    100%{
-        max-height: 170px;
-        opacity: 1;
-    }
-}
-
-@keyframes gone {
-    100%{
-        max-height: 170px; 
-        opacity: 1;
-    }
-    0%{
-        max-height: 0;
-        opacity: 0;
-    }
-}
-body {
+body{
     margin: 0;
 }
-
-nav {
+#mainpage {
     width: 100%;
     padding: 10px;
     background-color: rgba(29, 29, 29, 0.945);
@@ -134,18 +112,4 @@ footer a{
     #d2257e,
     #d749d7
     );
-}
-.show{
-    opacity: 1;
-    max-height:170px ;
-    /* transition-duration: 0.75s; */
-    animation-name: showup;
-    animation-duration: 0.25s;
-}
-.hide{
-    opacity: 0;
-    max-height: 170px;
-    /* transition-duration: 0.75s; */
-    animation-name: gone;
-    animation-duration: 0.25s;
 }

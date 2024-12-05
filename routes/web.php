@@ -8,7 +8,7 @@ use App\Http\Controllers\ManagmentController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('main');
 
 Auth::routes();
 

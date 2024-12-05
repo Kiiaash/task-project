@@ -27,12 +27,12 @@ window.addEventListener('DOMContentLoaded', event => {
     const dropdown = document.getElementById('dropdown');
 
     navbarbtn.addEventListener('click', () => {
-        if (dropdown.classList.contains('show') == true) {
-            dropdown.classList.remove('show');
-            dropdown.classList.add('hide');
+        if (dropdown.classList.contains('showw') == true) {
+            dropdown.classList.remove('showw');
+            dropdown.classList.add('hidee');
         } else {
-            dropdown.classList.remove('hide');
-            dropdown.classList.add('show');
+            dropdown.classList.remove('hidee');
+            dropdown.classList.add('showw');
         }
     });
 });
