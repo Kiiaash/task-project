@@ -9,7 +9,43 @@
         <!-- Styles / Scripts -->
             @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased dark:bg-black dark:text-white/50">
-        
+    <body>
+        <nav>
+            <span>
+               <a href="/">
+                OverTask
+               </a>
+            </span>
+            <ul>
+                <a href="#">
+                    <li>Home</li>
+                </a>
+                <a href="#">
+                    <li>About Us</li>
+                </a>
+                <a href="#">
+                    <li>Contact</li>
+                </a>
+                <a href="{{ route('register') }}">
+                    <li>Register</li>
+                </a>
+                <a href="{{ route('login') }}">
+                    <li>Login</li>
+                </a>
+            </ul>
+        </nav>
+        <main>
+            <div class="container">
+                <p class="title">THE BEST TO TRACK YOUR TASKS</p>
+                <p class="sub-title">Enjoy a boost in your productivity</p>
+                <button>More</button>
+            </div>
+        </main>
+        <footer>
+            <p>&copy;2024 testProject. All rights reserved.</p>
+            <p>
+                <a href="{{ route('managment') }}">Login</a>
+            </p>
+        </footer>
     </body>
 </html>
