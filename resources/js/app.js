@@ -1,3 +1,4 @@
 import './bootstrap';
-import '../admin/js/scripts.js';
-import '../admin/js/datatables-simple-demo.js';
+import './scripts.js';
+import './datatables-simple-demo.js';
+
