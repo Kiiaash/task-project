@@ -25,7 +25,7 @@ Route::get('/managment_login',[ManagmentController::class, 'takelogin'])->name('
 
 Route::post('/check',[ManagmentController::class,'login'])->name('login.check');
 
-
+Route::get('/loggingout',[ManagmentController::class, 'logout'])->name('logout.dashboard');
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
 

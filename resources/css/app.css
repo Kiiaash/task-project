@@ -137,13 +137,15 @@ footer a{
 }
 .show{
     opacity: 1;
-    max-height: 170px;
-    transition-duration: 0.75s;
+    max-height:170px ;
+    /* transition-duration: 0.75s; */
     animation-name: showup;
+    animation-duration: 0.25s;
 }
 .hide{
     opacity: 0;
-    max-height: 0;
-    transition-duration: 0.75s;
+    max-height: 170px;
+    /* transition-duration: 0.75s; */
     animation-name: gone;
+    animation-duration: 0.25s;
 }

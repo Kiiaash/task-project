@@ -23,7 +23,7 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-    const navbarbtn = document.getElementById('navbarDropdown');
+    const navbarbtn = document.getElementById('navbarDropdownn');
     const dropdown = document.getElementById('dropdown');
 
     navbarbtn.addEventListener('click', () => {
@@ -35,6 +35,4 @@ window.addEventListener('DOMContentLoaded', event => {
             dropdown.classList.add('show');
         }
     });
-
-
 });
