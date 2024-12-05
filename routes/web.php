@@ -23,6 +23,8 @@ Route::get('/managment',function(){
 
 Route::get('/managment_login',[ManagmentController::class, 'takelogin'])->name('login.take');
 
+Route::post('/check',[ManagmentController::class,'login'])->name('login.check');
+
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
