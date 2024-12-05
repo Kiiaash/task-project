@@ -5,6 +5,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ManagmentController;
+use Illuminate\Http\Request;
 
 Route::get('/', function () {
     return view('welcome');
@@ -29,16 +30,19 @@ Route::get('/loggingout',[ManagmentController::class, 'logout'])->name('logout.d
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){
 
-    Route::get('/dashboard',function(){
-        return view('admin.sections.index');
+    Route::get('/dashboard',function(Request $request){
+        $path = $request->path();
+        return view('admin.sections.index',compact('path'));
     })->name('dashboard');
 
-    Route::get('/tasks',function(){
-        return view('admin.sections.posts.index');
+    Route::get('/tasks',function(Request $request){
+        $path = $request->path();
+        return view('admin.sections.posts.index',compact('path'));
     })->name('tasks');
 
-    Route::get('/edit',function(){
-        return view('admin.sections.editor.index.blade');
+    Route::get('/edit',function(Request $request){
+        $path = $request->path();
+        return view('admin.sections.editor.index.blade',compact('path'));
     })->name('edit');
     
 

@@ -14,3 +14,7 @@ Dashboard
 @section('content')
 DAHSBOARD
 @endsection
+
+@section('path')
+{{ $path }}
+@endsection

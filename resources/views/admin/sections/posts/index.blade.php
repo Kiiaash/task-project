@@ -13,3 +13,6 @@ Tasks
     Posts
 @endsection
 
+@section('path')
+{{ $path }}
+@endsection

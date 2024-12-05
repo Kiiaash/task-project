@@ -500,3 +500,7 @@ Edit
 </div>
 @endsection
 
+
+@section('path')
+{{ $path }}
+@endsection
