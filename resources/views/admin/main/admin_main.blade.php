@@ -35,7 +35,7 @@
             <li class="nav-item dropdown headbutton">
                 <a class="nav-link dropdown-toggle" id="navbarDropdownn" href="#" role="button"
                     data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-                <ul class="hiddenmenu" id="dropdown" aria-labelledby="navbarDropdown">
+                <ul class="hiddenmenu hidee" id="dropdown" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">Settings</a></li>
                     <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                     <li>

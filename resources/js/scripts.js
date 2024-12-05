@@ -25,7 +25,7 @@ window.addEventListener('DOMContentLoaded', event => {
 
     const navbarbtn = document.getElementById('navbarDropdownn');
     const dropdown = document.getElementById('dropdown');
-
+    (dropdown.classList.contains('hidee') !== true)?dropdown.classList.add('hidee') : " ";
     navbarbtn.addEventListener('click', () => {
         if (dropdown.classList.contains('showw') == true) {
             dropdown.classList.remove('showw');

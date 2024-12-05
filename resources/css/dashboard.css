@@ -31,7 +31,7 @@ body {
 }
 .hidee{
     opacity: 0;
-    max-height: 170px;
+    max-height: 0px;
     /* transition-duration: 0.75s; */
     animation-duration: 0.25s;
 }

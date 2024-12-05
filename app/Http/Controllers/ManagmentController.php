@@ -26,6 +26,6 @@ class ManagmentController extends Controller
         Auth::logout();
          $request->session()->invalidate(); 
          $request->session()->regenerateToken(); 
-         return redirect()->route('');
+         return redirect()->route('main');
     }
 }
