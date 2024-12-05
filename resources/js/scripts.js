@@ -3,7 +3,7 @@
     * Copyright 2013-2023 Start Bootstrap
     * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-sb-admin/blob/master/LICENSE)
     */
-    // 
+// 
 // Scripts
 // 
 
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', event => {
     // Toggle the side navigation
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
     if (sidebarToggle) {
-       // Uncomment Below to persist sidebar toggle between refreshes
+        // Uncomment Below to persist sidebar toggle between refreshes
         // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
         //     document.body.classList.toggle('sb-sidenav-toggled');
         // }
@@ -23,15 +23,18 @@ window.addEventListener('DOMContentLoaded', event => {
         });
     }
 
-    const navbarbtn  = document.getElementById('navbarDropdown');
+    const navbarbtn = document.getElementById('navbarDropdown');
     const dropdown = document.getElementById('dropdown');
-    navbarbtn.addEventListener('click',()=>{
-       if(dropdown.style.display == 'block'){
-        dropdown.style.display = 'none';
-       }else{
-        dropdown.style.display = 'block';
-        dropdown.style.position = 'absolute';
-        dropdown.style.right = '0px';
-       }
+
+    navbarbtn.addEventListener('click', () => {
+        if (dropdown.classList.contains('show') == true) {
+            dropdown.classList.remove('show');
+            dropdown.classList.add('hide');
+        } else {
+            dropdown.classList.remove('hide');
+            dropdown.classList.add('show');
+        }
     });
+
+
 });
