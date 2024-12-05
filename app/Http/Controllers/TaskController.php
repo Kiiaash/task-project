@@ -21,7 +21,7 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {      
-        $cards = User::find($request->user()->id)->tasks ;
+        $cards = User::Find($request->user()->id)->tasks()->orderBy('id')->get();
         return view('tasks.index',compact('cards'));
     }
 
