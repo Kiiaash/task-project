@@ -12,7 +12,7 @@ class ManagmentController extends Controller
     public function login(ManageLogin $request){
 
         // dd($request->input());
-        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password],$request->remMe)){
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password,'level'=>"admin"],$request->remMe)){
             return redirect()->route('dashboard');
         }else{
             return redirect()->route('login.take')->with('faild','There were not matches for your credntial, please try again');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminModifierRequest;
 use App\Models\Admin;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -31,13 +32,16 @@ class AdminModifierController extends Controller
      */
     public function store(AdminModifierRequest $request)
     {
-        $admins = new Admin();
-        $admins -> username = $request->input('username');
-        $admins -> email = $request->input('email');
-        $admins -> password = Hash::make($request->input('password'));
-        $admins -> created_at = now();
-        $admins ->updated_at = null;
-        $admins -> save();
+        
+        $users = new User();
+        $users -> name = $request->input('username');
+        $users -> email = $request->input('email');
+        $users -> password = Hash::make($request->input('password'));
+        $users -> created_at = now();
+        $users -> updated_at = null;
+        $users ->state = "active";
+        $users ->level = $request->input('role');
+        $users -> save();
 
         return redirect()->route('adminmod.create')->with('success','you have successfully created the new admin');
     }
