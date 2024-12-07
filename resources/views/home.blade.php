@@ -2,11 +2,11 @@
 
 @section('content')
 @if (session()->has('success'))
-            <div class="alert alert-success alert-dismissible fade show col-md-8 mx-auto" role="alert">
-                <strong>{{ session('success') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            @endif
+<div class="alert alert-success alert-dismissible fade show col-md-8 mx-auto" role="alert">
+    <strong>{{ session('success') }}</strong>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+@endif
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
