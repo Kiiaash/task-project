@@ -29,12 +29,11 @@ class AdminModifierRequest extends FormRequest
     {
         return [
             'email'=>'required|email',
-            'username'=>'required|min=7|unique:admins,usename',
+            'username'=>'required|min:7|unique:admins,username|max:20',
             'password'=>[
                 'required',
-                'min:7',
                 'confirmed',
-                 Password::min(50)->numbers()->mixedCase()->symbols()->letters(),
+                 Password::min(7)->numbers()->mixedCase()->symbols()->letters(),
             ]
         ];
     }

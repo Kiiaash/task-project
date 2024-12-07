@@ -16,7 +16,7 @@
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control @error('email'){{ 'is-invalid' }}@enderror" id="email"
-                    name="email" placeholder="Enter email">
+                    name="email" placeholder="Enter email" value="{{ old('email') }}">
                 @error('email')
                     <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -24,16 +24,25 @@
 
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username">
+                <input type="text" class="form-control @error('username'){{ 'is-invalid' }}@enderror" id="username" name="username" placeholder="Enter username" value="{{ old('username') }}">
+                @error('username')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control"id="password" name="password" placeholder="Password">
+                <input type="password" class="form-control  @error('password'){{ 'is-invalid' }}@enderror" id="password" name="password" placeholder="Password">
+                @error('password')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <div class="form-group">
                 <label for="password_confirmation">Confirm Password</label>
-                <input type="password" class="form-control" id="password_confirmation" name="password_confirmation"
+                <input type="password" class="form-control  @error('password_confirmation'){{ 'is-invalid' }}@enderror" id="password_confirmation" name="password_confirmation"
                     placeholder="Confirm Password">
+                    @error('password_confirmation')
+                <div class="invalid-feedback">{{ $message }}</div>
+                @enderror
             </div>
             <button type="submit" name="register" class="btn btn-primary mt-3">Submit</button>
         </form>
