@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ManagmentController;
 use Illuminate\Http\Request;
+use App\Http\Controllers\forgetpassController;
 
 
 Route::get('/', function () {
@@ -31,6 +32,8 @@ Route::get('/managment_login',[ManagmentController::class, 'takelogin'])->name('
 Route::post('/check',[ManagmentController::class,'login'])->name('login.check');
 
 Route::get('/loggingout',[ManagmentController::class, 'logout'])->name('logout.dashboard');
+
+Route::get('/forgetpass',[forgetpassController::class, 'showTheForm'])->name('forget.pass');
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){

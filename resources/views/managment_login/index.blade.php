@@ -59,7 +59,7 @@
                                                 Password</label>
                                         </div>
                                         <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
-                                            <a class="small" href="password.html">Forgot Password?</a>
+                                            <a class="small" href="{{ route('forget.pass') }}">Forgot Password?</a>
                                             <input type="submit" name="login" value="Login" class="btn btn-primary">
                                         </div>
                                     </form>
