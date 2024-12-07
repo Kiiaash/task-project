@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\AdminModifierRequest;
+use App\Models\Admin;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class AdminModifierController extends Controller
 {
@@ -29,7 +31,15 @@ class AdminModifierController extends Controller
      */
     public function store(AdminModifierRequest $request)
     {
-        dd($request->input());
+        $admins = new Admin();
+        $admins -> username = $request->input('username');
+        $admins -> email = $request->input('email');
+        $admins -> password = Hash::make($request->input('password'));
+        $admins -> created_at = now();
+        $admins ->updated_at = null;
+        $admins -> save();
+
+        return redirect()->route('adminmod.create')->with('success','you have successfully created the new admin');
     }
 
     /**
