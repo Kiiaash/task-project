@@ -10,8 +10,11 @@ use Illuminate\Support\Facades\Auth;
 class ManagmentController extends Controller
 {
     public function login(ManageLogin $request){
+
+        // dd($request->input());
+
         $user = User::where('emial',$request->input('email'));
-        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password])){
+        if(Auth::attempt(['email'=>$request->email,'password'=>$request->password],$request->remMe)){
             return redirect()->route('dashboard');
         }else{
             return redirect()->route('login.take');
