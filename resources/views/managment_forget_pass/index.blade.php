@@ -27,15 +27,21 @@
                                     <h3 class="text-center font-weight-light my-4">Password Reset</h3>
                                 </div>
                                 <div class="card-body">
-                                    @if (session()->has('status'))
-                                        <div class="alert alert-success" role="alert">
+                                    @if (session()->has('status') == true)
+                                        <div class="alert alert-danger" role="alert">
                                             {{ session('status') }}
                                         </div>
+                                    @elseif(session()->has('success'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('success') }}
+                                        </div>
                                     @endif
-                                    <form method="post" action="{{ route('reset.pass') }}">
+                                    <form method="POST" action="{{ route('reset.pass') }}">
                                         @csrf
                                         <div class="form-floating mb-3">
-                                            <input name="email" class="form-control @error('email'){{ "is-invalid" }} @enderror" id="inputEmail" type="email" placeholder="name@example.com" />
+                                            <input name="email"
+                                                class="form-control @error('email'){{ 'is-invalid' }} @enderror"
+                                                id="inputEmail" type="email" placeholder="name@example.com" />
                                             <label for="inputEmail">Email address</label>
                                             @error('email')
                                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -48,7 +54,7 @@
                                     </form>
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <a href="{{ route('login.take') }}"></a>
+                                    <a href="{{ '#' }}"></a>
                                 </div>
                             </div>
                         </div>

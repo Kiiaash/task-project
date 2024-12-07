@@ -13,12 +13,18 @@ class forgetpassController extends Controller
     }
 
     public function reset(Request $request){
+        $request->validate([
+            'email'=>'required',
+        ]);
+        
         $user = User::where('email',$request->only('email'))->where('level',"admin")->first();
-        $status = Password::sendResetLink($request->only('email'));
-        if($status === Password::RESET_LINK_SENT && $user->level == "admin"){
-            return back()->with(['status'=>__($status)]);
+        if($user==""){
+            return redirect()->route('forget.pass')->with('status','The credentials provided is not valid, please try again');
         }else{
-            return back()->withErrors(['email'=>__($status)]);
+            $status = Password::sendResetLink($request->only('email'));
+            if($status === Password::RESET_LINK_SENT){
+                return redirect()->route('forget.pass')->with(['success'=>__($status)]);
+            }
         }
     }
 }
