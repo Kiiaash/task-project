@@ -15,7 +15,21 @@
             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
         </div>
     @endif
-    <div class="container">
+    <div class="card mt-3 mb-5">
+        <div class="card-header">
+          Featured
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">You can add the admins here</h5>
+          <p class="card-text">
+            <ul>
+                <li>Pay attention to the roles that you want to add</li>
+                <li>Users created here can also have access to the tasks section</li>
+            </ul>
+          </p>
+        </div>
+      </div>
+    <div class="container border rounded mb-5">
         <h2 class="mt-5">Signup Form</h2>
         <form action="{{ route('adminmod.store') }}" method="POST">
             @csrf
@@ -59,8 +73,9 @@
                     <option value="admin">Admin</option>
                     <option value="user">User</option>
                 </select> </div>
-            <button type="submit" name="register" class="btn btn-primary mt-3">Submit</button>
+            <button type="submit" name="register" class="btn btn-primary mt-5 mb-5">Submit</button>
         </form>
+    </div>
     @endsection
 
     @section('path')
