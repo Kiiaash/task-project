@@ -4,14 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class admin extends Controller
+class AdminModifierController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $path = $request->path();
+        return view('admin.admin_registration.index',compact('path'));
     }
 
     /**

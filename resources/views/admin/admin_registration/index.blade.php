@@ -1,16 +1,15 @@
 @extends('admin.main.admin_main')
 
-
 @section('title')
-Dashboard
+Admin registration
 @endsection
 
 @section('pagetitel')
-Dashboard
+Admin register
 @endsection
 
 @section('content')
-DAHSBOARD
+
 @endsection
 
 @section('path')
