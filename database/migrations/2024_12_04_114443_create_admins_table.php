@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('admins', function (Blueprint $table) {
             $table->id();
             $table->string('email');
-            $table->string('username');
+            $table->string('username')->unique();
             $table->string('password',500);
             $table->string('email_verified_at',300)->nullable();
             $table->text('remember_token')->nullable();

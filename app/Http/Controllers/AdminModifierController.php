@@ -9,18 +9,18 @@ class AdminModifierController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index()
     {
-        $path = $request->path();
-        return view('admin.admin_registration.index',compact('path'));
+       
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $path = $request->path();
+        return view('admin.admin_registration.index',compact('path'));
     }
 
     /**
@@ -28,7 +28,7 @@ class AdminModifierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->input());
     }
 
     /**

@@ -118,7 +118,7 @@
                         <div class="collapse" id="AdmincollapseLayouts" aria-labelledby="headingOne"
                             data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav" style="animation:none;">
-                                <a class="nav-link" href="{{ route('adminmod.index') }}">Admin Registration</a>
+                                <a class="nav-link" href="{{ route('adminmod.create') }}">Admin Registration</a>
                                 <a class="nav-link" href="{{ route('edit') }}">Admin Lists</a>
                             </nav>
                         </div>

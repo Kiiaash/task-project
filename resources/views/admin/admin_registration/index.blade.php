@@ -11,7 +11,8 @@
 @section('content')
     <div class="container">
         <h2 class="mt-5">Signup Form</h2>
-        <form action="/your-action-url" method="POST">
+        <form action="{{ route('adminmod.store') }}" method="POST">
+            @csrf
             <div class="form-group">
                 <label for="email">Email address</label>
                 <input type="email" class="form-control"id="email" name="email" placeholder="Enter email">
@@ -28,7 +29,7 @@
                 <label for="password_confirmation">Confirm Password</label>
                 <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Confirm Password">
             </div>
-            <button class="btn btn-primary mt-3">Submit</button>
+            <button type="submit" name="register" class="btn btn-primary mt-3">Submit</button>
         </form>
     @endsection
 
