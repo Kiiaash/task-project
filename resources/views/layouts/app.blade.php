@@ -90,7 +90,7 @@
             <div class="alert alert-danger alert-dismissible fade show col-md-8 mx-auto" role="alert">
                 <strong>{{ session('faild') }}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
+            </div>
             @endif
             @yield('content')
         </main>

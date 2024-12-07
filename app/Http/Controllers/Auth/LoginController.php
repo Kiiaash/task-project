@@ -43,7 +43,7 @@ class LoginController extends Controller
     public function login(Request $request)
     {
         if(Auth::attempt(['email' => $request->email, 'password' => $request->password],$request->remember)){
-            return redirect()->route('home');
+            return redirect()->route('home')->with('success','you have successfuly logged in');
         }else{
             return redirect()->route('login')->with('faild','We could not log you in, please try again');
         }
