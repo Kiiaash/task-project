@@ -52,9 +52,10 @@
                                                     href="login.html">Send Password Reset Link</button></div>
                                         </div>
                                     </form>
+                                    
                                 </div>
                                 <div class="card-footer text-center py-3">
-                                    <a href="{{ '#' }}"></a>
+                                    <a href="{{ route('login.take') }}">Go back to login page</a>
                                 </div>
                             </div>
                         </div>
