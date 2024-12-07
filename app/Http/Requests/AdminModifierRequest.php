@@ -34,7 +34,8 @@ class AdminModifierRequest extends FormRequest
                 'required',
                 'confirmed',
                  Password::min(7)->numbers()->mixedCase()->symbols()->letters(),
-            ]
+            ],
+            'role'=>'required',
         ];
     }
 }
