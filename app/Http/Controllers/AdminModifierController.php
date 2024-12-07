@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\AdminModifierRequest;
 use Illuminate\Http\Request;
 
 class AdminModifierController extends Controller
@@ -26,7 +27,7 @@ class AdminModifierController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(AdminModifierRequest $request)
     {
         dd($request->input());
     }

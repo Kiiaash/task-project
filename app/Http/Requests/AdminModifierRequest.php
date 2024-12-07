@@ -4,6 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
 
 class AdminModifierRequest extends FormRequest
 {
@@ -12,7 +13,7 @@ class AdminModifierRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        if(!empty(Auth::name())){
+        if(!empty(Auth::user()->name)){
             return true;
         }else{
             return false;
@@ -28,8 +29,13 @@ class AdminModifierRequest extends FormRequest
     {
         return [
             'email'=>'required|email',
-            'username'=>'required|min=7'
-            ''
+            'username'=>'required|min=7|unique:admins,usename',
+            'password'=>[
+                'required',
+                'min:7',
+                'confirmed',
+                 Password::min(50)->numbers()->mixedCase()->symbols()->letters(),
+            ]
         ];
     }
 }
