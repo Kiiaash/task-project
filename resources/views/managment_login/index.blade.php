@@ -12,6 +12,12 @@
         <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="bg-primary">
+    @if(session()->has('faild'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{ session('faild') }}</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    @endif
         <div id="layoutAuthentication">
             <div id="layoutAuthentication_content">
                 <main>
