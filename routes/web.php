@@ -35,6 +35,7 @@ Route::get('/loggingout',[ManagmentController::class, 'logout'])->name('logout.d
 
 Route::get('/forgetpass',[forgetpassController::class, 'showTheForm'])->name('forget.pass');
 Route::post('/reset',[forgetpassController::class, 'reset'])->name('reset.pass');
+Route::get('/passresetform/{token}',[forgetpassController::class, 'showresetpassform'])->name('resetpass.show');
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function(){

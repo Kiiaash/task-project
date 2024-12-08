@@ -27,4 +27,8 @@ class forgetpassController extends Controller
             }
         }
     }
+
+    public function showresetpassform($token){
+        return view('managment_password_reset.index');
+    }
 }
