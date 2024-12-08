@@ -64,9 +64,6 @@
                                         <input type="submit" name="ResetPassword" class="btn btn-primary" value="Reset Password">
                                     </form>
                                 </div>
-                                <div class="card-footer text-center py-3">
-                                    <a href="{{ route('main') }}">Back to home page</a>
-                                </div>
                             </div>
                         </div>
                     </div>
