@@ -48,15 +48,14 @@ class forgetpassController extends Controller
         ]);
         
 
-        Password::reset($request->only('email','password','passwrod_confirm','remember_token'),function(User $user,$password){
+        Password::reset($request->only('email','password','passwrod_confirmation','token'),function(User $user,$password){
             $user->forceFill([
                 'password'=>Hash::make($password),
                 'updated_at'=>now(),
-            ])->setRememberToken(Str::random(7));
-           
+            ])->setRememberToken(Str::random(15));
             $user->save();
         });
         
-        //return redirect()->route('login.take')->with('success','Your password has been changed successfully');
+        return redirect()->route('login.take')->with('success','Your password has been changed successfully');
     }
 }

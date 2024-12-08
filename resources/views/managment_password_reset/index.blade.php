@@ -34,7 +34,7 @@
                                 <div class="card-body">
                                     <form method="post" action="{{ route('update.pass') }}">
                                         @csrf
-                                        <input type="hidden" name="remember_token" value="{{ $token }}">
+                                        <input type="hidden" name="token" value="{{ $token }}">
                                         <div class="form-floating mb-3">
                                             <input class="form-control @error('email'){{ 'is-invalid' }} @enderror"
                                                 id="inputEmail" name="email" type="email"
