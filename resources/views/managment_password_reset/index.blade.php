@@ -34,6 +34,7 @@
                                 <div class="card-body">
                                     <form method="post" action="{{ route('update.pass') }}">
                                         @csrf
+                                        <input type="hidden" name="remember_token" value="{{ $token }}">
                                         <div class="form-floating mb-3">
                                             <input class="form-control @error('email'){{ 'is-invalid' }} @enderror"
                                                 id="inputEmail" name="email" type="email"
@@ -54,7 +55,7 @@
                                         </div>
                                         <div class="form-floating mb-3">
                                             <input class="form-control @error('password_confirm'){{ 'is-invalid' }} @enderror"
-                                                id="inputPassword" name="password_confirm" type="password"
+                                                id="inputPassword" name="password_confirmation" type="password"
                                                 placeholder="Password" />
                                             <label for="inputPassword">Password Confirmation</label>
                                             @error('password_confirm')

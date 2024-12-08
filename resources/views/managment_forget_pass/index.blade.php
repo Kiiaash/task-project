@@ -49,7 +49,7 @@
                                         </div>
                                         <div class="mt-4 mb-0">
                                             <div class="d-grid"><button class="btn btn-primary btn-block"
-                                                    href="login.html">Send Password Reset Link</button></div>
+                                                    href="#">Send Password Reset Link</button></div>
                                         </div>
                                     </form>
                                     

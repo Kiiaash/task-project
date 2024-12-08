@@ -19,7 +19,6 @@ class forgetpassController extends Controller
         $request->validate([
             'email'=>'required',
         ]);
-        
         $user = User::where('email',$request->only('email'))->where('level',"admin")->first();
         if($user==""){
             return redirect()->route('forget.pass')->with('status','The credentials provided is not valid, please try again');
@@ -37,23 +36,27 @@ class forgetpassController extends Controller
     }
 
     public function passwordUpdater(Request $request){
+
+        
         $request->validate([
-            'email'=>'required|email',
+            'email'=>'required',
             'password'=>[
                 'required',
                 'confirmed',
-                 PasswordRule::min(7)->numbers()->mixedCase()->symbols()->letters(),
+                 PasswordRule::min(7)->numbers()->symbols()->letters(),
             ],
-            'passwrod_confirm'=>'required',
         ]);
         
-        Password::reset($request->only('password','passwrod_confirm','email','token'),function(User $user,$password){
+
+        Password::reset($request->only('email','password','passwrod_confirm','remember_token'),function(User $user,$password){
             $user->forceFill([
-                'password'=>Hash::make($password)
-            ])->setRememberToken(Str::random(10));
+                'password'=>Hash::make($password),
+                'updated_at'=>now(),
+            ])->setRememberToken(Str::random(7));
+           
             $user->save();
         });
-
-        return redirect()->route('login.take')->with('success','Your password has been changes successfully');
+        
+        //return redirect()->route('login.take')->with('success','Your password has been changed successfully');
     }
 }

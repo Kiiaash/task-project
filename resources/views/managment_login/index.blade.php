@@ -32,6 +32,11 @@
                                     <h3 class="text-center font-weight-light my-4">Login</h3>
                                 </div>
                                 <div class="card-body">
+                                    @if (session()->has('success'))
+                                        <div class="alert alert-success" role="alert">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
                                     <form method="post" action="{{ route('login.check') }}">
                                         @csrf
                                         <div class="form-floating mb-3">
