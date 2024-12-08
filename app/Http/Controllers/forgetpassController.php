@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password as PasswordRule;
+use Illuminate\Support\Str;
 
 class forgetpassController extends Controller
 {
@@ -42,7 +44,16 @@ class forgetpassController extends Controller
                 'confirmed',
                  PasswordRule::min(7)->numbers()->mixedCase()->symbols()->letters(),
             ],
+            'passwrod_confirm'=>'required',
         ]);
-        dd($request->all());
+        
+        Password::reset($request->only('password','passwrod_confirm','email','token'),function(User $user,$password){
+            $user->forceFill([
+                'password'=>Hash::make($password)
+            ])->setRememberToken(Str::random(10));
+            $user->save();
+        });
+
+        return redirect()->route('login.take')->with('success','Your password has been changes successfully');
     }
 }
