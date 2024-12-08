@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
 use App\Models\User;
+use Illuminate\Validation\Rules\Password as PasswordRule;
 
 class forgetpassController extends Controller
 {
@@ -28,11 +29,20 @@ class forgetpassController extends Controller
         }
     }
 
-    public function showresetpassform(){
-        return view('managment_password_reset.index');
+    public function showresetpassform(Request $request,$token){
+        $email = $request->query('email');
+        return view('managment_password_reset.index',['email'=>$email,'token'=>$token]);
     }
 
-    public function changepass(Request $request,$token){
-        
+    public function passwordUpdater(Request $request){
+        $request->validate([
+            'email'=>'required|email',
+            'password'=>[
+                'required',
+                'confirmed',
+                 PasswordRule::min(7)->numbers()->mixedCase()->symbols()->letters(),
+            ],
+        ]);
+        dd($request->all());
     }
 }

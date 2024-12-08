@@ -32,7 +32,7 @@
                                     <h3 class="text-center font-weight-light my-4">Reset password</h3>
                                 </div>
                                 <div class="card-body">
-                                    <form method="post" action="{{ route('login.check') }}">
+                                    <form method="post" action="{{ route('update.pass') }}">
                                         @csrf
                                         <div class="form-floating mb-3">
                                             <input class="form-control @error('email'){{ 'is-invalid' }} @enderror"
@@ -61,7 +61,7 @@
                                                 <div class="invalid-feedback">{{ $message }}</div>
                                             @enderror
                                         </div>
-                                        <input type="submit" name="ResetPassword" class="btn btn-primary" value="Reset Password">
+                                        <input type="submit" name="ResetPasswordprim" class="btn btn-primary" value="Reset Password">
                                     </form>
                                 </div>
                             </div>
