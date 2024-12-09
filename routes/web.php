@@ -19,7 +19,6 @@ Auth::routes();
 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 Route::resource('tasks', TaskController::class);
 Route::resource('adminmod', AdminModifierController::class);
 
@@ -39,7 +38,7 @@ Route::controller(forgetpassController::class)->group(function () {
     Route::post('/reset', 'reset')->name('reset.pass');
     Route::get('/passresetform/{token}','showresetpassform')->name('resetpass.show');
     Route::post('/passupdate','passwordUpdater')->name('update.pass');
-})->middleware('guest');
+});
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {
