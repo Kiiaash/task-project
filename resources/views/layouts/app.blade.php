@@ -55,11 +55,15 @@
                         @else
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->is('home') ? 'active' : ' ' }}" aria-current="page"
-                                    href="{{ route('home') }}">Home</a>
+                                    href="{{ route('home') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->is('tasks') ? 'active' : ' ' }} "
                                     href="{{ route('tasks.index') }}">Tasks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                    href="{{ route('main') }}">Home</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button"

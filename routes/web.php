@@ -34,12 +34,12 @@ Route::post('/check', [ManagmentController::class, 'login'])->name('login.check'
 
 Route::get('/loggingout', [ManagmentController::class, 'logout'])->name('logout.dashboard');
 
-Route::controller(ForgotPasswordController::class)->group(function () {
+Route::controller(forgetpassController::class)->group(function () {
     Route::get('/forgetpass','showTheForm')->name('forget.pass');
     Route::post('/reset', 'reset')->name('reset.pass');
     Route::get('/passresetform/{token}','showresetpassform')->name('resetpass.show');
     Route::post('/passupdate','passwordUpdater')->name('update.pass');
-});
+})->middleware('guest');
 
 
 Route::middleware(['auth'])->prefix('admin')->group(function () {

@@ -26,12 +26,19 @@
                 <a href="#">
                     <li>Contact</li>
                 </a>
+                @guest
                 <a href="{{ route('register') }}">
                     <li>Register</li>
                 </a>
                 <a href="{{ route('login') }}">
                     <li>Login</li>
                 </a>
+                @else
+                <a href="/home">
+                    <li>Dashboard</li>
+                </a>
+                @endguest
+                
             </ul>
         </nav>
         <main>
