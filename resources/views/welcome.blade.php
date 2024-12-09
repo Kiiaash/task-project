@@ -27,10 +27,10 @@
                     <li>Contact</li>
                 </a>
                 @guest
-                <a href="{{ route('register') }}">
+                <a href="{{ route('register') }}" style="position: relative; left:700px;">
                     <li>Register</li>
                 </a>
-                <a href="{{ route('login') }}">
+                <a href="{{ route('login') }}" style="position: relative; left:700px;">
                     <li>Login</li>
                 </a>
                 @else
@@ -42,7 +42,7 @@
             </ul>
         </nav>
         <main>
-            <div class="container">
+            <div class="containerrr">
                 <p class="title">THE BEST TO TRACK YOUR TASKS</p>
                 <p class="sub-title">Enjoy a boost in your productivity</p>
                 <button>More</button>

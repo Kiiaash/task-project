@@ -42,7 +42,7 @@ nav a:hover {
     transition: 0.25s;
 }
 
-.container {
+.containerrr {
     width: 100%;
     min-height: 500px;
     background: repeating-linear-gradient(45deg,
@@ -59,7 +59,7 @@ nav a:hover {
     padding: 15px 50px;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.container .title{
+.containerrr .title{
     font-size: 3rem;
     font-weight: bolder;
     margin: 80px 0 5px 15px;
@@ -67,7 +67,7 @@ nav a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color:transparent;
 }
-.container .sub-title{
+.containerrr .sub-title{
     font-weight: bolder;
     margin: 20px 0 5px 35px;
     font-size: 1.5rem;
@@ -75,7 +75,7 @@ nav a:hover {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-.container button{
+.containerrr button{
     padding: 15px 35px;
     border: none;
     background-color: #6f0077;
@@ -87,7 +87,7 @@ nav a:hover {
     font-size: 18px;
     transition-duration: 0.25s;
 }
-.container button:hover{
+.containerrr button:hover{
     background-color: #120014;
     transition-duration: 0.25s;
     color: white;
