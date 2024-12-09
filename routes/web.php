@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ManagmentController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\forgetpassController;
-
+use App\Http\Middleware\loginCheck;
 
 Route::get('/', function () {
     return view('welcome');
@@ -27,7 +27,7 @@ Route::get('/managment', function () {
     return view('admin.main.admin_main');
 })->name('managment')->middleware('auth');
 
-Route::get('/managment_login', [ManagmentController::class, 'takelogin'])->name('login.take');
+Route::get('/managment_login', [ManagmentController::class, 'takelogin'])->name('login.take')->middleware(loginCheck::class);
 
 Route::post('/check', [ManagmentController::class, 'login'])->name('login.check');
 

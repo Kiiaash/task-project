@@ -19,7 +19,7 @@ class loginCheck
         if(!Auth::check()){
             return redirect()->route('main')->with('faild','please try again');
         }else{
-            return $next($request);
+            return $next($request); 
         }
         
     }
