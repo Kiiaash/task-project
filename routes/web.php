@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminModifierController;
-use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\TaskController;
-use Illuminate\Auth\Events\Login;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ManagmentController;
@@ -27,17 +25,17 @@ Route::get('/managment', function () {
     return view('admin.main.admin_main');
 })->name('managment')->middleware('auth');
 
-Route::get('/managment_login', [ManagmentController::class, 'takelogin'])->name('login.take')->middleware(loginCheck::class);
-
-Route::post('/check', [ManagmentController::class, 'login'])->name('login.check');
-
-Route::get('/loggingout', [ManagmentController::class, 'logout'])->name('logout.dashboard');
+Route::controller(ManagmentController::class)->group(function () {
+    Route::get('/managment_login','takelogin')->name('login.take')->middleware(loginCheck::class);
+    Route::post('/check','login')->name('login.check');
+    Route::get('/loggingout','logout')->name('logout.dashboard');
+});
 
 Route::controller(forgetpassController::class)->group(function () {
-    Route::get('/forgetpass','showTheForm')->name('forget.pass');
+    Route::get('/forgetpass', 'showTheForm')->name('forget.pass');
     Route::post('/reset', 'reset')->name('reset.pass');
-    Route::get('/passresetform/{token}','showresetpassform')->name('resetpass.show');
-    Route::post('/passupdate','passwordUpdater')->name('update.pass');
+    Route::get('/passresetform/{token}', 'showresetpassform')->name('resetpass.show');
+    Route::post('/passupdate', 'passwordUpdater')->name('update.pass');
 });
 
 
